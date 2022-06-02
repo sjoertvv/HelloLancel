@@ -7,20 +7,20 @@ import numpy as np
 import pickle
 import random
 
-from TS_input import get_icoin, flux_check_key 
-
 import k3match
 
 # local imports
-from setup_ice import iceberg
+from TS_input import get_icoin, flux_check_key 
 from load_data import data, data_ac, settings
-from make_skymaps import ps_Sky, icontrol, twomxz_ra,twomxz_dec
+from make_skymaps import ps_Sky, twomxz_ra, twomxz_dec, iceberg
 
 
-# settings
+# check the settings
 do_twomass = settings['do_twomass'] 	# use KDE of ZTF nuclear transient (or 2MASS if False)
 Ntest = settings['Ntest']				# number of MC samples used
 
+if settings['do_superEdd']:
+	data_ac = data_ac[data_ac['fEdd']>0.5]
 
 # dtype for the Monte Carlo sample of flares
 min_z_dtype = [('ran_id', 'i8'),('ra', 'f8'),('dec', 'f8'),
@@ -46,7 +46,7 @@ print ('making unique random indices...')
 iran_control = np.zeros(len(ps_Ntest), int)
 iran_flares = np.zeros(len(ps_Ntest), int)
 iran_off = np.zeros(len(ps_Ntest), int)
-n_control = sum(icontrol)
+n_control = len(data)
 
 for i in range(Ntest):
 	iran_control[i*n_pst:(i+1)*n_pst] =  random.sample(range(0, n_control), n_pst)
@@ -155,7 +155,7 @@ total_ice_area = sum( np.unique(iceberg_Ntest_coin['area']*iceberg_Ntest_coin['f
 
 ftcoin_all = np.zeros(len(iceberg_coin))
 for i, ic in enumerate(iceberg_coin):
-	tdiff =  ic['jd'] - data[icontrol]['flare_peak_jd']
+	tdiff =  ic['jd'] - data['flare_peak_jd']
 	ftcoin_all[i] += 365-np.clip(min(tdiff), 0, 1e99)
 
 print ('sum signalness                         :',sum(iceberg_coin[ftcoin_all>0]['signalness']))
