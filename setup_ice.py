@@ -11,11 +11,10 @@ import sjoert
 ice_GB0 =  astropy.io.ascii.read('./data/IC/AMON_ICECUBE_GOLD_AND_BRONZE.dat')
 ice_EHE0 =  astropy.io.ascii.read('./data/IC/AMON_ICECUBE_EHE.dat')
 ice_HESE0 =  astropy.io.ascii.read('./data/IC/AMON_ICECUBE_HESE.dat')
-iceberg0 =  astropy.io.ascii.read('./data/IC/IC_alerts_merged.txt')
+iceberg0 =  astropy.io.ascii.read('./data/IC/IC_alerts_merged.txt') # private compilation of IC alerts, after removing retracted events; curated by Simeon Reusch
 
 
 # add new fields
-print ('total number of icecube events:',len(iceberg0))
 iceberg0['signalness'] = np.zeros(len(iceberg0))
 iceberg0['area'] = np.zeros(len(iceberg0))
 iceberg0['jd'] = np.zeros(len(iceberg0))
