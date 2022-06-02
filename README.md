@@ -15,7 +15,7 @@ This gets you straight to the final result, an estimate of the significance with
 
 To explore the intermediate steps, consider running the scripts that make the figures: `plot_skymaps.py` and `plot_PDFs.py`.
 
-To change the settings of the likelihood method, edit the dictionary in `load_data.py` (more documentation provided in this file).  
+To change the settings of the likelihood method, edit the dictionary in `settings.py` (further documentation provided inside this file).  
 
 ### Lancel?
 The nicknames of three flares with a potential neutrino counterpart are: 
