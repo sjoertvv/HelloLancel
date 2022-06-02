@@ -20,7 +20,7 @@ To explore the intermediate steps, consider running the scripts that make the fi
 To change the settings of the likelihood method, edit the dictionary in `settings.py` (further documentation provided inside this file).  
 
 ### MC-free
-It can be insightful to look at the signififance (3.2 sigma) obtained solely on the low area denisity of ZTF flares with large dust echoes. This computed in `simple_significance.py`. 
+It can be insightful to look at the signififance (3.2 sigma) obtained solely from the low area denisity of ZTF flares with large dust echoes. This is computed in `simple_significance.py`. 
 
 ## Lancel?
 The nicknames of three flares with a potential neutrino counterpart are: 
