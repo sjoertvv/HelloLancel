@@ -10,10 +10,15 @@ import scipy.stats
 
 from load_data import data, data_ac, data_allztf, settings
 
+# conf function
+def pval_to_sigma(pval):
+	ff = np.linspace(1,5,1000)
+	return np.interp(pval, 1-(scipy.stats.norm.cdf(ff,0,1))[::-1], ff[::-1])
+
 
 # define time window for IceCube+ZTF matches
-tdiff_max = 365
-tdiff_min = 0
+tdiff_max = settings['tdiff_max']
+tdiff_min = settings['tdiff_min']
 
 # defaults
 flux_check_key = 'post1yr_mean_flux_w1' # define the echo flux

@@ -10,15 +10,12 @@ import importlib
 import TS_input
 importlib.reload(TS_input)
 
-from TS_input import test_stat_only_coin, get_icoin, flux_check_key
+from TS_input import test_stat_only_coin, get_icoin, flux_check_key, pval_to_sigma
 from setup_MC import *
 from setup_ice import iceberg
 from load_data import data_ac, settings
 
-# some helper functions
-def pval_to_sigma(pval):
-	ff = np.linspace(1,5,1000)
-	return np.interp(pval, 1-(scipy.stats.norm.cdf(ff,0,1))[::-1], ff[::-1])
+
 
 # mean source density 
 bg_areal_dens = sum(iceberg['ncoin'])/total_ice_area			
