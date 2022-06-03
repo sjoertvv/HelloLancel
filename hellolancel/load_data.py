@@ -3,9 +3,12 @@ load the flare data and define the input settings of the likelihood analysis
 '''
 
 import astropy.io.ascii
-from settings import settings 
+from hellolancel.settings import settings
+import os
 
-fname = 'data/ZTF_NEOWISE/ZTF_neoWISE_flares_parent.dat'
+data_dir = os.path.join(os.path.dirname(__file__), "data")
+
+fname = os.path.join(data_dir, 'ZTF_NEOWISE/ZTF_neoWISE_flares_parent.dat')
 
 # read the parent sample of all nuclear transient with post-peak neoWISE observations
 data = astropy.io.ascii.read(fname)

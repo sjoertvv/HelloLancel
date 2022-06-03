@@ -1,7 +1,8 @@
 '''
 this can run after loading TS_input
 '''
-from TS_input import *
+from hellolancel.TS_input import *
+from matplotlib import pyplot as plt
 
 plt.clf()
 plt.hist(np.log10(data[flux_check_key][iparent]), bins=140, range=[-7.5,0], cumulative=False,density=True, histtype='step', lw=1.5, ls='-',color=cc_dict['Parent sample'],label='Parent sample')

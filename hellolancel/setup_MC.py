@@ -2,9 +2,7 @@
 make samples of accretion flares for H0
 '''
 
-from matplotlib import pyplot as plt
 import numpy as np
-import pickle
 import random
 
 import k3match
@@ -33,7 +31,7 @@ n_pst = len(data_ac)
 ps_test_copy = np.zeros(n_pst, dtype=min_z_dtype)
 
 for k in ps_test_copy.dtype.names[3:]:
- 	ps_test_copy[k] = data_ac[k].copy()
+	ps_test_copy[k] = data_ac[k].copy()
 
 
 print ('creating empty MC flare sample....')

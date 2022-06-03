@@ -2,16 +2,16 @@
 compile IceCube alert info
 '''
 
-from matplotlib import pyplot as plt
 import astropy.io.ascii
 import numpy as np
-import k3match
 import sjoert
+import os
+from hellolancel.load_data import data_dir
 
-ice_GB0 =  astropy.io.ascii.read('./data/IC/AMON_ICECUBE_GOLD_AND_BRONZE.dat')
-ice_EHE0 =  astropy.io.ascii.read('./data/IC/AMON_ICECUBE_EHE.dat')
-ice_HESE0 =  astropy.io.ascii.read('./data/IC/AMON_ICECUBE_HESE.dat')
-iceberg0 =  astropy.io.ascii.read('./data/IC/IC_alerts_merged.txt') # private compilation of IC alerts, after removing retracted events; curated by Simeon Reusch
+ice_GB0 = astropy.io.ascii.read(os.path.join(data_dir, 'IC/AMON_ICECUBE_GOLD_AND_BRONZE.dat'))
+ice_EHE0 = astropy.io.ascii.read(os.path.join(data_dir, 'IC/AMON_ICECUBE_EHE.dat'))
+ice_HESE0 =  astropy.io.ascii.read(os.path.join(data_dir, 'IC/AMON_ICECUBE_HESE.dat'))
+iceberg0 =  astropy.io.ascii.read(os.path.join(data_dir, 'IC/IC_alerts_merged.txt')) # private compilation of IC alerts, after removing retracted events; curated by Simeon Reusch
 
 
 # add new fields

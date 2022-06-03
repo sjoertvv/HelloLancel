@@ -2,9 +2,9 @@
 run this after make_skymaps and run_MC to make plot
 '''
 
-from setup_ice import iceberg
-from load_data import data, data_ac
-from make_skymaps import *
+from hellolancel.load_data import data_ac
+from hellolancel.make_skymaps import *
+import matplotlib.pyplot as plt
 
 import sjoert
 

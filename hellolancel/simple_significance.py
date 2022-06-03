@@ -3,12 +3,13 @@ estimate the significance of 3 neutrino detections from large dust echoes
 here we use only their low sky density, no Monte Carlo is used here
 '''
 import scipy.stats
+import numpy as np
 
 from sjoert.stellar import radectolb
 
-from load_data import data_ac
-from setup_ice import iceberg
-from TS_input import get_icoin, pval_to_sigma
+from hellolancel.load_data import data_ac
+from hellolancel.setup_ice import iceberg
+from hellolancel.TS_input import get_icoin, pval_to_sigma
 
 # estimate fraction of time a neutrino is in temportal coincidence with a flare
 ntcoin = np.zeros(len(iceberg))

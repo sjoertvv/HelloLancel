@@ -1,7 +1,7 @@
 '''
 define global settings for the likelihood anaylsis
 '''
-settings = {}
+settings = dict()
 
 settings['do_twomass'] 	= False 	# if True, sample coordindates from 2MRS; default is to use the KDE of the RA, Decl. of the parent sample of ZTF nuclear flares
 settings['do_all_ZTF'] 	= False   	# if True, we make no selection on the optical properties of the flare, simply select all dust echo candidates

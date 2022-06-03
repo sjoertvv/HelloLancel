@@ -5,10 +5,9 @@ also here we define the function for coincidence and the TS
 '''
 
 import numpy as np
-from pylab import plt
 import scipy.stats
 
-from load_data import data, data_ac, data_allztf, settings
+from hellolancel.load_data import data, data_ac, settings
 
 # conf function
 def pval_to_sigma(pval):

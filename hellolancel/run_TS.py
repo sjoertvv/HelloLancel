@@ -2,22 +2,20 @@
 this script combines everything to obtain the 
 TS distribution for the data and MCed background
 '''
-import scipy
 
 from sjoert.stellar import ang_sep
+import matplotlib.pyplot as plt
 
 import importlib
-import TS_input
+from hellolancel import TS_input
 importlib.reload(TS_input)
 
-from TS_input import test_stat_only_coin, get_icoin, flux_check_key, pval_to_sigma
-from setup_MC import *
-from setup_ice import iceberg
-from load_data import data_ac, settings
+from hellolancel.TS_input import test_stat_only_coin, pval_to_sigma
+from hellolancel.setup_MC import *
+from hellolancel.setup_ice import iceberg
+from hellolancel.load_data import data_ac
 
-
-
-# mean source density 
+# mean source density
 bg_areal_dens = sum(iceberg['ncoin'])/total_ice_area			
 
 # find coincident matches for data

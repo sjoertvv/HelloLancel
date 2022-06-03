@@ -1,19 +1,18 @@
-from matplotlib import pyplot as plt
 import numpy as np
-import scipy.stats
 import astropy.io.fits
+import os
+import scipy
 
 import k3match
 
-from sjoert.simtime import mjdtojd, yeartomjd
 from sjoert.stellar import radectolb
 
-from load_data import data, settings
-from setup_ice import iceberg
+from hellolancel.load_data import data, data_dir, settings
+from hellolancel.setup_ice import iceberg
 
 
 # also try to make a collection of non-AGN flares
-twomassXz = astropy.io.fits.getdata('./data/2MASS/XSCz_Huchra_velmod.fit')
+twomassXz = astropy.io.fits.getdata(os.path.join(data_dir, '2MASS/XSCz_Huchra_velmod.fit'))
 
 Nsky = int(1e6)  # number of events sampled from ZTF sky dist
 
