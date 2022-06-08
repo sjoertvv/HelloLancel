@@ -5,12 +5,12 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="hellolancel",
-    version="0.1.0",
+    version="1.0.0",
     author="Sjoert van Velzen, Robert Stein",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT",
-    url="https://github.com/winter-telescope/wintertoo",
+    url="https://github.com/sjoertvv/HelloLancel",
     keywords="astronomy IceCube neutrino",
     packages=setuptools.find_packages(),
     classifiers=[
